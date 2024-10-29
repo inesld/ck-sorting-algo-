@@ -1,0 +1,39 @@
+Algorithm checkpoint1
+VAR 
+ i,compteurMot, compteurVoyel, compteurTaillePh: integer;
+ phrase: chaine;
+ voyelles : tableau de caracteres 
+
+Begin
+ // sequence 1
+  repeat
+    write("enter une phrase");
+    read(phrase);
+  until  (phrase[phrase.length]= "."  && phrase.length > 5  && phrase[0] !=" ") 
+
+// sequence 2
+voyelles = ["e","a", "i", "o", "y", "u", "A", "E", "I", "O", "Y", "U"];
+compteurMot := 1
+compteurTaillePh := phrase.length
+compteurVoyel := 0
+
+// sequence 3
+for i from 1 to phrase.length -1 step 1
+  if (phrase[i] = " "  && phrase[i-1] !=" " && phrase[i+1] != " " )
+      compteurMot++
+  endIf
+
+  if (phrase[i] IN voyelles)
+   compteurVoyel++
+  endIf
+endFor
+
+// sequence 4
+
+write("la longeur de la phrase est ", compteurTaillePh)
+write("le nbr total de mots est ", compteurMot)
+write("le nbr total des voayelles est ", compteurVoyel)
+
+
+// sequence 6
+end .

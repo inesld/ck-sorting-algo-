@@ -1,0 +1,56 @@
+Algorithme checkpoint2
+Var
+    arr : tableau d'entiers
+    i, j : entier
+    key : entier
+    shifts, comparisons : entier
+
+Begin
+    // Initialiser les compteurs
+    shifts := 0
+    comparisons := 0
+
+    // ***** Parcourir le tableau à partir du deuxième élément ****//
+    for i from 1 to length(arr) - 1 do
+        key := arr[i]
+        j := i - 1
+
+     // *****  Insérer arr[i] dans la séquence triée arr[0...i-1]  ****//
+        
+        while j >= 0 et arr[j] > key do
+            comparisons := comparisons + 1              // Incrémenter le compteur de comparaisons
+            arr[j + 1] := arr[j]
+            j := j - 1
+            shifts := shifts + 1                        // Incrémenter le compteur de décalages
+        endWhile
+
+        comparisons := comparisons + 1                // Incrémenter le compteur de comparaisons pour la comparaison finale
+        arr[j + 1] := key
+    endFor
+
+   // *****  Afficher les compteurs  ***** //
+    write("Total des décalages : ", shifts)
+    write("Total des comparaisons : ", comparisons)
+    
+    // *****  Retourner le tableau trié  ***** //
+     write ("le tableau trié est," arr)
+End.
+*******************************************************************
+
+Explication de l'algorithme 
+
+- Var : Déclare les variables utilisées dans l'algorithme, incluant le tableau arr, les indices i et j, la clé key, et les compteurs shifts et comparisons.
+
+- Begin : Démarre le corps principal de l'algorithme.
+
+- Initialiser les compteurs : Met les compteurs shifts et comparisons à zéro.
+
+- Parcourir le tableau : Utilise une boucle For (pour) pour parcourir les éléments du tableau à partir du deuxième élément.
+
+- Insérer dans la séquence triée : Utilise une boucle while (tant que )  pour déplacer les éléments plus grands que key et insérer key dans la bonne position.
+
+- Incrémenter les compteurs : Incrémente les compteurs de décalages et de comparaisons.
+
+- Afficher les compteurs : Affiche les valeurs des compteurs shifts et comparisons.
+
+-Afficher le tableau trié : Afficher le tableau trié.
